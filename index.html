@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border: none;
+        }
+
+        .refresh-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .refresh-button:hover {
+            background-color: #0056b3;
+        }
+
+        .tutorial {
+            max-width: 800px;
+            text-align: left;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .tutorial h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .tutorial p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .share-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .share-link input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .share-link button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .share-link button:hover {
+            background-color: #218838;
+        }
+
+        .plain-text-link {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>战舰游戏介绍</h1>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" width="960" height="569" allowfullscreen></iframe>
+
+    <button class="refresh-button" onclick="refreshPage()">刷新</button>
+
+    <div class="share-link">
+        <input type="text" id="pageLink" value="https://hi.tzehau.com" readonly>
+        <button onclick="copyLink()">复制链接</button>
+        <!--div class="plain-text-link">网站链接: https://yourwebsite.com</div-->
+    </div>
+
+    <div class="tutorial">
+        <h2>什么是战舰游戏？</h2>
+        <p>战舰是一种经典的猜谜游戏，通常由两名玩家参与。每个玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
+        
+        <h2>如何获胜？</h2>
+        <p>要赢得战舰游戏，你需要先了解以下几点：</p>
+        <p>1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。</p>
+        <p>2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。</p>
+        <p>3. 保持冷静和耐心，不要重复猜测已经猜过的格子。</p>
+        <p>4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。</p>
+    </div>
+
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+
+        function copyLink() {
+            var copyText = document.getElementById("pageLink");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            alert("链接已复制: " + copyText.value);
+        }
+    </script>
+</body>
+</html>
