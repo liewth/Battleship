@@ -3,60 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2024成长营の战舰游戏</title>
+    <title>Battleship Presentation</title>
     <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <h1>战舰游戏（巴士版）</h1>
+    <header>
+		<h1>战舰游戏（巴士版）</h1>
+    </header>
+	<main>
+		<div class="iframe-container">
+			<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+		</div>
+		<button class="refresh-button" onclick="refreshPage()">刷新</button>
+
+		<div class="share-link">
+			<input type="text" id="pageLink" value="hi.tzehau.com" readonly>
+			<button onclick="copyLink()">复制链接</button>
+		</div>
+		
+		<button class="toggle-qr-button" onclick="toggleQRCode()">显示二维码</button>
+		<div class="qr-code" id="qrCode" style="display: none;">
+			<p>如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
+			<img src="src\alternativeqr.svg" alt="QR code for alternative website">
+		</div>
+
+		<div class="tutorial">
+			<h2>什么是战舰游戏？</h2>
+			<p>战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
+			
+			<h2>如何获胜？</h2>
+			<p>要赢得战舰游戏，你需要先了解以下几点：</p>
+			<p>1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。</p>
+			<p>2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。</p>
+			<p>3. 保持冷静和耐心，不要重复猜测已经猜过的格子。</p>
+			<p>4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。</p>
+
+			<h2>如何进行攻击？</h2>
+			<p>攻击规则如下：</p>
+			<ol>
+				<li>攻击者选择要攻击的对手棋盘上的一个位置。</li>
+				<li>防守者从列表中选择一个问题向攻击者提问。</li>
+				<li>如果攻击者能够正确回答问题，攻击成功。</li>
+				<li>如果攻击者答错或不知道答案，攻击失败。</li>
+			</ol>
+
+			<h2>防守者问题列表</h2>
+			<a href="questions.html">查看问题列表</a>
+		</div>
+		<div class="ship-info">
+			<h2>战舰信息</h2>
+			<ul>
+				<li>船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1</li>
+				<li>船只类型: Battleship (战舰) - 数量: 1 - 大小: 2</li>
+				<li>船只类型: Carrier (航母) - 数量: 1 - 大小: 3</li>
+			</ul>
+		</div>
+	</main>
 	
-    <div class="iframe-container">
-	    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
-    </div>
+	<footer id="footer">
+		<p>本网站将在线至2024年6月30日。如有问题，请联系 <a href="mailto:liewtzehau@gmail.com">liewtzehau@gmail.com</a></p>
+	</footer>
 
-    <button class="refresh-button" onclick="refreshPage()">刷新</button>
-
-    <div class="share-link">
-        <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
-        <button onclick="copyLink()">复制链接</button>
-    </div>
-	
-    <button class="toggle-qr-button" onclick="toggleQRCode()">显示二维码</button>
-    <div class="qr-code" id="qrCode" style="display: none;">
-        <p>如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
-        <img src="src\alternativeqr.svg" alt="QR code for alternative website">
-    </div>
-	
-    <div class="tutorial">
-        <h2>什么是战舰游戏？</h2>
-        <p>战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
-        
-        <h2>如何获胜？</h2>
-        <p>要赢得战舰游戏，你需要先了解以下几点：</p>
-        <p>1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。</p>
-        <p>2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。</p>
-        <p>3. 保持冷静和耐心，不要重复猜测已经猜过的格子。</p>
-        <p>4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。</p>
-
-        <h2>如何进行攻击？</h2>
-        <p>攻击规则如下：</p>
-        <ol>
-            <li>攻击者选择要攻击的对手车位上的一位同学或老师。</li>
-            <li>防守者从列表中选择一个问题向攻击者提问。</li>
-            <li>如果攻击者能够正确回答问题，攻击成功。</li>
-            <li>如果攻击者答错或不知道答案，攻击失败。</li>
-        </ol>
-
-        <h2>防守者问题列表</h2>
-        <a href="questions.html">查看问题列表</a>
-    </div>
-	<div class="ship-info">
-		<h2>战舰信息</h2>
-		<ul>
-			<li>船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1</li>
-			<li>船只类型: Battleship (战舰) - 数量: 1 - 大小: 2</li>
-			<li>船只类型: Carrier (航母) - 数量: 1 - 大小: 3</li>
-		</ul>
-	</div>
     <script>
         function refreshPage() {
             location.reload();
@@ -69,7 +76,7 @@
             document.execCommand("copy");
             alert("链接已复制: " + copyText.value);
         }
-	    
+
         function toggleQRCode() {
             var qrCode = document.getElementById("qrCode");
             var toggleButton = document.querySelector(".toggle-qr-button");
@@ -82,5 +89,6 @@
             }
         }
     </script>
+	
 </body>
 </html>
