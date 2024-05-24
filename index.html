@@ -3,51 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2024成长营の战舰游戏</title>
+    <title>Battleship Presentation</title>
     <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <h1>战舰游戏（巴士版）</h1>
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" width="960" height="569" allowfullscreen></iframe>
+	<header style="display: flex; align-items: center;">
+		<h1 id="title" style="margin-right: 10px;">战舰游戏（巴士版）</h1>
+		<button id="languageButton" class="button language-toggle" onclick="toggleLanguage()">EN</button>
+	</header>
+    <main>
+        <div class="iframe-container">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+        </div>
+        <button id="refresh" class="button refresh-button" onclick="refreshPage()">刷新</button>
 
-    <button class="refresh-button" onclick="refreshPage()">刷新</button>
+        <div class="share-link">
+            <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
+			<div style="display: flex; align-items: center;">
+            <button id="copyLink" class="button share-button" onclick="copyLink()">复制链接</button>
+			<button id="showQRCode" class="button toggle-qr-button" onclick="toggleQRCode()">显示二维码</button>
 
-    <div class="share-link">
-        <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
-        <button onclick="copyLink()">复制链接</button>
-    </div>
+			</div>
+        </div>
+		<div class="qr-code" id="qrCode" style="display: none;">
+			<p id="qrDescription">如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
+			<img src="src\alternativeqr.svg" alt="QR code for alternative website">
+		</div>
 
-    <div class="tutorial">
-        <h2>什么是战舰游戏？</h2>
-        <p>战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
-        
-        <h2>如何获胜？</h2>
-        <p>要赢得战舰游戏，你需要先了解以下几点：</p>
-        <p>1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。</p>
-        <p>2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。</p>
-        <p>3. 保持冷静和耐心，不要重复猜测已经猜过的格子。</p>
-        <p>4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。</p>
+        <div class="tutorial">
+            <h2 id="whatIsTitle">什么是战舰游戏？</h2>
+            <p id="whatIsContent">战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
+            
+            <h2 id="howToWinTitle">如何获胜？</h2>
+            <p id="howToWinContent">要赢得战舰游戏，你需要先了解以下几点：</p>
+            <p id="winTip1">1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。</p>
+            <p id="winTip2">2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。</p>
+            <p id="winTip3">3. 保持冷静和耐心，不要重复猜测已经猜过的格子。</p>
+            <p id="winTip4">4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。</p>
 
-        <h2>如何进行攻击？</h2>
-        <p>攻击规则如下：</p>
-        <ol>
-            <li>攻击者选择要攻击的对手车位上的一位同学或老师。</li>
-            <li>防守者从列表中选择一个问题向攻击者提问。</li>
-            <li>如果攻击者能够正确回答问题，攻击成功。</li>
-            <li>如果攻击者答错或不知道答案，攻击失败。</li>
-        </ol>
+            <h2 id="howToAttackTitle">如何进行攻击？</h2>
+            <p id="howToAttackContent">攻击规则如下：</p>
+            <ol>
+                <li id="attackStep1">攻击者选择要攻击的对手棋盘上的一个位置。</li>
+                <li id="attackStep2">防守者从列表中选择一个问题向攻击者提问。</li>
+                <li id="attackStep3">如果攻击者能够正确回答问题，攻击成功。</li>
+                <li id="attackStep4">如果攻击者答错或不知道答案，攻击失败。</li>
+            </ol>
 
-        <h2>防守者问题列表</h2>
-        <a href="questions.html">查看问题列表</a>
-    </div>
-	<div class="ship-info">
-		<h2>战舰信息</h2>
-		<ul>
-			<li>船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1</li>
-			<li>船只类型: Battleship (战舰) - 数量: 1 - 大小: 2</li>
-			<li>船只类型: Carrier (航母) - 数量: 1 - 大小: 3</li>
-		</ul>
-	</div>
+            <h2 id="defenderQuestionsTitle">防守者问题列表</h2>
+            <a id="questionsLink" href="questions.html">查看问题列表</a>
+        </div>
+        <div class="ship-info">
+            <h2 id="shipInfoTitle">战舰信息</h2>
+            <ul>
+                <li id="shipInfo1">船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1x1</li>
+                <li id="shipInfo2">船只类型: Battleship (战舰) - 数量: 1 - 大小: 2x1</li>
+                <li id="shipInfo3">船只类型: Carrier (航母) - 数量: 1 - 大小: 3x1</li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer id="footer">
+        <p id="footerContent">本网站将在线至2024年6月30日。如有问题，请联系 liewtzehau@gmail.com</p>
+    </footer>
     <script>
         function refreshPage() {
             location.reload();
@@ -58,8 +76,115 @@
             copyText.select();
             copyText.setSelectionRange(0, 99999); // For mobile devices
             document.execCommand("copy");
-            alert("链接已复制: " + copyText.value);
+			if (currentLanguage === 'zh') {
+				alert("链接已复制: " + copyText.value);
+			} else {
+				alert("Link copied: " + copyText.value);
+			}
         }
+
+        function toggleQRCode() {
+            var qrCode = document.getElementById("qrCode");
+            var toggleButton = document.querySelector(".toggle-qr-button");
+			
+            if (qrCode.style.display === "none") {
+                qrCode.style.display = "block";
+				toggleButton.id = "hideQRCode";
+                toggleButton.textContent = "隐藏二维码";
+            } else {
+                qrCode.style.display = "none";
+				toggleButton.id = "showQRCode";
+                toggleButton.textContent = "显示二维码";
+            }
+        }
+		const translations = {
+        en: {
+            title: "Battleship (Bus Version)",
+			languageButton: "中文",
+            refresh: "Refresh",
+            copyLink: "Copy Link",
+            showQRCode: "Show QR Code",
+            hideQRCode: "Hide QR Code",
+            qrDescription: "If hi.tzehau.com is not accessible, please scan the QR code below to visit the alternative website:",
+            whatIsTitle: "What is Battleship Game?",
+            whatIsContent: "Battleship is a classic guessing game typically played by two teams of players. Each team has a hidden board with ships placed on it. Players take turns guessing the locations on the opponent's board, aiming to hit and eventually sink all of the opponent's ships.",
+            howToWinTitle: "How to Win?",
+            howToWinContent: "To win the battleship game, you need to understand the following points:",
+            winTip1: "1. Remember the length of each type of ship and use this information to judge the likelihood of a hit.",
+            winTip2: "2. Use logical reasoning and guessing to determine the location of the opponent's ships. Continue attacking adjacent squares after a hit until the ship is sunk.",
+            winTip3: "3. Stay calm and patient, and avoid guessing squares that have already been guessed.",
+            winTip4: "4. When placing your own ships, avoid overly concentrated or regular patterns to increase the difficulty of the opponent's guesses.",
+            howToAttackTitle: "How to Attack?",
+            howToAttackContent: "The rules for attacking are as follows:",
+            attackStep1: "1. The attacker selects a position on the opponent's board to attack.",
+            attackStep2: "2. The defender selects a question from the list to ask the attacker.",
+            attackStep3: "3. If the attacker answers the question correctly, the attack is successful.",
+            attackStep4: "4. If the attacker answers incorrectly or does not know the answer, the attack fails.",
+            defenderQuestionsTitle: "Defender's Question List",
+            questionsLink: "View Question List",
+            shipInfoTitle: "Ship Information",
+            shipInfo1: "Ship Type: Submarine - Quantity: 2 - Size: 1x1",
+            shipInfo2: "Ship Type: Battleship - Quantity: 1 - Size: 2x1",
+            shipInfo3: "Ship Type: Carrier - Quantity: 1 - Size: 3x1",
+            footerContent: "This website will be online until June 30, 2024. If you have any questions, please contact liewtzehau@gmail.com."
+        },
+        zh: {
+            title: "战舰游戏（巴士版）",
+			languageButton: "EN",
+            refresh: "刷新",
+            copyLink: "复制链接",
+            showQRCode: "显示二维码",
+            hideQRCode: "隐藏二维码",
+            qrDescription: "如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:",
+            whatIsTitle: "什么是战舰游戏？",
+            whatIsContent: "战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。",
+            howToWinTitle: "如何获胜？",
+            howToWinContent: "要赢得战舰游戏，你需要先了解以下几点：",
+            winTip1: "1. 记住每种战舰的长度，并利用这些信息来判断击中的可能性。",
+            winTip2: "2. 通过逻辑推理和猜测来确定对方战舰的位置。每次击中后，继续攻击相邻的格子，直到击沉该战舰。",
+            winTip3: "3. 保持冷静和耐心，不要重复猜测已经猜过的格子。",
+            winTip4: "4. 在布置自己的战舰时，尽量避免过于集中或规律的排列，这样可以增加对方猜测的难度。",
+            howToAttackTitle: "如何进行攻击？",
+            howToAttackContent: "攻击规则如下：",
+            attackStep1: "攻击者选择要攻击的对手棋盘上的一个位置。",
+            attackStep2: "防守者从列表中选择一个问题向攻击者提问。",
+            attackStep3: "如果攻击者能够正确回答问题，攻击成功。",
+            attackStep4: "如果攻击者答错或不知道答案，攻击失败。",
+            defenderQuestionsTitle: "防守者问题列表",
+            questionsLink: "查看问题列表",
+            shipInfoTitle: "战舰信息",
+            shipInfo1: "船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1x1",
+            shipInfo2: "船只类型: Battleship (战舰) - 数量: 1 - 大小: 2x1",
+            shipInfo3: "船只类型: Carrier (航母) - 数量: 1 - 大小: 3x1",
+            footerContent: "本网站将在线至2024年6月30日。如有问题，请联系 liewtzehau@gmail.com 。"
+        }
+		};
+
+		let currentLanguage = localStorage.getItem('language') || 'zh'; // Default language is Chinese
+
+		function toggleLanguage() {
+			const languageToggle = document.querySelector('.language-toggle');
+			if (currentLanguage === 'zh') {
+				currentLanguage = 'en';
+			} else {
+				currentLanguage = 'zh';
+			}
+			localStorage.setItem('language', currentLanguage);
+			updateLanguage();
+		}
+
+		function updateLanguage() {
+			const elements = document.querySelectorAll('[id]');
+			elements.forEach(element => {
+				const translationKey = element.id;  
+				if (translations[currentLanguage][translationKey]) {
+					element.textContent = translations[currentLanguage][translationKey];
+				}
+			});
+		}
+
+		updateLanguage();
     </script>
+	
 </body>
 </html>
