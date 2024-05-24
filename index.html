@@ -113,12 +113,10 @@
 			
             if (shareCode.style.display === "none") {
                 shareCode.style.display = "block";
-				// toggleButton.id = "hideUrl";
-                toggleButton.textContent = "隐藏链接";
+                toggleButton.textContent = translations[currentLanguage]["hideUrl"];
             } else {
                 shareCode.style.display = "none";
-				// shareCode.id = "shareUrl";
-                toggleButton.textContent = "分享链接";
+                toggleButton.textContent = translations[currentLanguage]["shareUrl"];
             }
         }
 	
