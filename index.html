@@ -19,7 +19,13 @@
         <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
         <button onclick="copyLink()">复制链接</button>
     </div>
-
+	
+    <button class="toggle-qr-button" onclick="toggleQRCode()">显示二维码</button>
+    <div class="qr-code" id="qrCode" style="display: none;">
+        <p>如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
+        <img src="doqr.svg" alt="QR code for alternative website">
+    </div>
+	
     <div class="tutorial">
         <h2>什么是战舰游戏？</h2>
         <p>战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。</p>
@@ -62,6 +68,18 @@
             copyText.setSelectionRange(0, 99999); // For mobile devices
             document.execCommand("copy");
             alert("链接已复制: " + copyText.value);
+        }
+	    
+        function toggleQRCode() {
+            var qrCode = document.getElementById("qrCode");
+            var toggleButton = document.querySelector(".toggle-qr-button");
+            if (qrCode.style.display === "none") {
+                qrCode.style.display = "block";
+                toggleButton.textContent = "隐藏二维码";
+            } else {
+                qrCode.style.display = "none";
+                toggleButton.textContent = "显示二维码";
+            }
         }
     </script>
 </body>
