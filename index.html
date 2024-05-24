@@ -15,23 +15,21 @@
         <div class="iframe-container">
             <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyRlAYFByS9uUYxnTJni8VoEZZagcwP3eAEtE21WB3ig0ITGmMuZ49Msveojp7sdHbgEWDhxrnBxK9/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
         </div>
-	    
-	<div style="text-align: center;">
-		<button id="refresh" class="button refresh-button" onclick="refreshPage()">刷新</button>
-	</div>
-	    
+		<div style="text-align: center;">
+			<button id="refresh" class="button refresh-button" onclick="refreshPage()">刷新</button>
+		</div>
         <div class="share-link">
             <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
 			<div style="display: flex; align-items: center;">
             <button id="copyLink" class="button share-button" onclick="copyLink()">复制链接</button>
-			<button id="showQRCode" class="button toggle-qr-button" onclick="toggleQRCode()">显示二维码</button>
+			<!--button id="showQRCode" class="button toggle-qr-button" onclick="toggleQRCode()">显示二维码</button-->
 
 			</div>
         </div>
-		<div class="qr-code" id="qrCode" style="display: none;">
+		<!--div class="qr-code" id="qrCode" style="display: none;">
 			<p id="qrDescription">如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
-			<img src="src\alternativeqr.svg" alt="QR code for alternative website">
-		</div>
+			<img src="doqr.svg" alt="QR code for alternative website">
+		</div-->
 
         <div class="tutorial">
             <h2 id="whatIsTitle">什么是战舰游戏？</h2>
@@ -56,17 +54,38 @@
             <h2 id="defenderQuestionsTitle">防守者问题列表</h2>
             <a id="questionsLink" href="questions.html">查看问题列表</a>
         </div>
-        <div class="ship-info">
-            <h2 id="shipInfoTitle">战舰信息</h2>
-            <ul>
-                <li id="shipInfo1">船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1x1</li>
-                <li id="shipInfo2">船只类型: Battleship (战舰) - 数量: 1 - 大小: 2x1</li>
-                <li id="shipInfo3">船只类型: Carrier (航母) - 数量: 1 - 大小: 3x1</li>
-            </ul>
-        </div>
-    </main>
-    
-    <footer id="footer">
+		<div class="tutorial">
+			<h2 id="shipInfoTitle">战舰信息</h2>
+			<ul>
+				<li>
+					<div style="display: flex; align-items: center;">
+						<p id="shipInfo1" style="margin: 0;">
+							船只类型: Submarine (潜艇) - 数量: 2 - 大小: 1x1
+						</p>
+						<img src="src/ship1.png" alt="Submarine Icon" style="width: 20px; height: 20px; margin-left: 10px;">
+					</div>
+				</li>
+				<li>
+					<div style="display: flex; align-items: center;">
+						<p id="shipInfo2" style="margin: 0;">
+							船只类型: Battleship (战舰) - 数量: 1 - 大小: 2x1
+						</p>
+						<img src="src/ship2.png" alt="Battleship Icon" style="width: 40px; height: 20px; margin-left: 10px;">
+					</div>
+				</li>
+				<li>
+					<div style="display: flex; align-items: center;">
+						<p id="shipInfo3" style="margin: 0;">
+							船只类型: Carrier (航母) - 数量: 1 - 大小: 3x1
+						</p>
+						<img src="src/ship3.png" alt="Carrier Icon" style="width: 60px; height: 20px; margin-left: 10px;">
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</main>		
+	<footer id="footer">
         <p id="footerContent">本网站将在线至2024年6月30日。如有问题，请联系 liewtzehau@gmail.com</p>
     </footer>
     <script>
@@ -100,6 +119,7 @@
                 toggleButton.textContent = "显示二维码";
             }
         }
+	
 		const translations = {
         en: {
             title: "Battleship (Bus Version)",
