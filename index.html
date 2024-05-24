@@ -18,18 +18,20 @@
 		<div style="text-align: center;">
 			<button id="refresh" class="button refresh-button" onclick="refreshPage()">刷新</button>
 		</div>
-        <div class="share-link">
-            <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
-			<div style="display: flex; align-items: center;">
-            <button id="copyLink" class="button share-button" onclick="copyLink()">复制链接</button>
-			<!--button id="showQRCode" class="button toggle-qr-button" onclick="toggleQRCode()">显示二维码</button-->
+		<div style="text-align: center;">
+            <button id="shareUrl" class="button toggle-share-button" onclick="toggleShareUrl()">分享链接给隔壁的朋友</button>
+		</div>
+		<div class="url-code" id="urlCode" style="display: none;">            
+            <div class="share-link">
+                
+                <input type="text" id="pageLink" value="hi.tzehau.com" readonly>
+                <div style="display: flex; align-items: center;">
+                <button id="copyLink" class="button share-button" onclick="copyLink()">复制链接</button>
 
-			</div>
-        </div>
-		<!--div class="qr-code" id="qrCode" style="display: none;">
-			<p id="qrDescription">如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:</p>
-			<img src="doqr.svg" alt="QR code for alternative website">
-		</div-->
+                </div>
+            </div>
+			<img src="src\hiqr.svg" alt="QR code for alternative website">
+		</div>
 
         <div class="tutorial">
             <h2 id="whatIsTitle">什么是战舰游戏？</h2>
@@ -105,18 +107,18 @@
 			}
         }
 
-        function toggleQRCode() {
-            var qrCode = document.getElementById("qrCode");
-            var toggleButton = document.querySelector(".toggle-qr-button");
+        function toggleShareUrl() {
+            var shareCode = document.getElementById("urlCode");
+            var toggleButton = document.querySelector(".toggle-share-button");
 			
-            if (qrCode.style.display === "none") {
-                qrCode.style.display = "block";
-				toggleButton.id = "hideQRCode";
-                toggleButton.textContent = "隐藏二维码";
+            if (shareCode.style.display === "none") {
+                shareCode.style.display = "block";
+				// toggleButton.id = "hideUrl";
+                toggleButton.textContent = "隐藏链接";
             } else {
-                qrCode.style.display = "none";
-				toggleButton.id = "showQRCode";
-                toggleButton.textContent = "显示二维码";
+                shareCode.style.display = "none";
+				// shareCode.id = "shareUrl";
+                toggleButton.textContent = "分享链接";
             }
         }
 	
@@ -126,9 +128,10 @@
 			languageButton: "中文",
             refresh: "Refresh",
             copyLink: "Copy Link",
+            shareUrl: "Share Url",
+            hideUrl: "Hide Url",
             showQRCode: "Show QR Code",
             hideQRCode: "Hide QR Code",
-            qrDescription: "If hi.tzehau.com is not accessible, please scan the QR code below to visit the alternative website:",
             whatIsTitle: "What is Battleship Game?",
             whatIsContent: "Battleship is a classic guessing game typically played by two teams of players. Each team has a hidden board with ships placed on it. Players take turns guessing the locations on the opponent's board, aiming to hit and eventually sink all of the opponent's ships.",
             howToWinTitle: "How to Win?",
@@ -156,9 +159,10 @@
 			languageButton: "EN",
             refresh: "刷新",
             copyLink: "复制链接",
+            shareUrl: "分享链接",
+            hideUrl: "隐藏链接",
             showQRCode: "显示二维码",
             hideQRCode: "隐藏二维码",
-            qrDescription: "如果 hi.tzehau.com 无法访问，请扫描下方二维码访问备用网站:",
             whatIsTitle: "什么是战舰游戏？",
             whatIsContent: "战舰是一种经典的猜谜游戏，通常由两队玩家参与。每队玩家都有一个隐藏的棋盘，上面布置了几艘战舰。玩家轮流猜测对方棋盘上的位置，目的是击中并最终击沉对方所有的战舰。",
             howToWinTitle: "如何获胜？",

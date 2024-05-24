@@ -59,11 +59,11 @@ iframe {
 }
 
 /* Styles for display-qr button */
-.toggle-qr-button {
+.toggle-share-button {
     background-color: #6c757d; /* Gray color */
 }
 
-.toggle-qr-button:hover {
+.toggle-share-button:hover {
     background-color: #5a6268; /* Darker gray on hover */
 }
 
@@ -129,19 +129,14 @@ iframe {
     border: 0;
 }
 
-.qr-code {
+.url-code {
     margin-top: 20px;
     text-align: center;
 }
 
-.qr-code img {
+.url-code img {
     width: 150px;
     height: 150px;
-}
-
-.toggle-qr-button {
-    margin-top: 20px;
-    display: block;
 }
 
 main {
