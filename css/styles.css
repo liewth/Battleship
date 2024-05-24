@@ -1,119 +1,120 @@
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa;
 }
 
 h1 {
-    margin-top: 20px;
-    font-size: 36px;
-    color: #333;
+	margin-top: 20px;
+	font-size: 36px;
+	color: #333;
 }
 
 iframe {
-    margin-top: 20px;
-    border: none;
+	margin-top: 20px;
+	border: none;
 }
 
 .refresh-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin: 20px;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	margin: 20px;
 }
 
 .refresh-button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 .tutorial {
-    max-width: 800px;
-    text-align: left;
-    margin: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+	max-width: 800px;
+	text-align: left;
+	margin: 20px;
+	padding: 20px;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 }
 
 .tutorial h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 
 .tutorial p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 10px 0;
+	font-size: 18px;
+	line-height: 1.6;
+	margin: 10px 0;
 }
 
 .share-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
 }
 
 .share-link input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+	width: 300px;
+	padding: 10px;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .share-link button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #28a745;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .share-link button:hover {
-    background-color: #218838;
+	background-color: #218838;
 }
 
 .plain-text-link {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #333;
 }
 
 .ship-info {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .ship-info h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+	font-size: 24px;
+	margin-bottom: 10px;
 }
 
 .ship-info ul {
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 .ship-info li {
-    font-size: 18px;
-    margin-bottom: 5px;
+	font-size: 18px;
+	margin-bottom: 5px;
 }
-
+		
 .iframe-container {
     position: relative;
     width: 100%;
@@ -145,3 +146,31 @@ iframe {
     margin-top: 20px;
     display: block;
 }
+
+main {
+    flex: 1;
+}
+
+footer {
+    /* position: fixed; */
+    /* bottom: 0; */
+    background: #f1f1f1;
+	
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    color: #333;
+	background: #f1f1f1;
+	padding: 3px;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
