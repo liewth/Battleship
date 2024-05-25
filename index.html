@@ -19,8 +19,13 @@
 			<button id="refresh" class="button refresh-button" onclick="refreshPage()">刷新</button>
 		</div>
 		<div style="text-align: center;">
-            <button id="shareUrl" class="button toggle-share-button" onclick="toggleShareUrl()">分享链接给隔壁的朋友</button>
+            <button id="showBoard" class="button toggle-sample-button" onclick="toggleSample()">观看例子</button>
+            <button id="shareUrl" class="button toggle-share-button" onclick="toggleShareUrl()">分享链接</button>
 		</div>
+		<div class="sample-board" id="SampleBoard" style="display: none;">
+            <img src="src/sampleboard.png" alt="Sample Board" class="sample-board">
+        </div>
+        
 		<div class="url-code" id="urlCode" style="display: none;">            
             <div class="share-link">
                 
@@ -119,6 +124,18 @@
                 toggleButton.textContent = translations[currentLanguage]["shareUrl"];
             }
         }
+        function toggleSample() {
+            var sampleBoard = document.getElementById("SampleBoard");
+            var toggleButton = document.querySelector(".toggle-sample-button");
+			
+            if (sampleBoard.style.display === "none") {
+                sampleBoard.style.display = "block";
+                toggleButton.textContent = translations[currentLanguage]["hideBoard"];
+            } else {
+                sampleBoard.style.display = "none";
+                toggleButton.textContent = translations[currentLanguage]["showBoard"];
+            }
+        }
 	
 		const translations = {
         en: {
@@ -128,6 +145,8 @@
             copyLink: "Copy Link",
             shareUrl: "Share Url",
             hideUrl: "Hide Url",
+            showBoard: "Show Sample",
+            hideBoard: "Hide Sample",
             showQRCode: "Show QR Code",
             hideQRCode: "Hide QR Code",
             whatIsTitle: "What is Battleship Game?",
@@ -159,6 +178,8 @@
             copyLink: "复制链接",
             shareUrl: "分享链接",
             hideUrl: "隐藏链接",
+            showBoard: "观看例子",
+            hideBoard: "隐藏例子",
             showQRCode: "显示二维码",
             hideQRCode: "隐藏二维码",
             whatIsTitle: "什么是战舰游戏？",

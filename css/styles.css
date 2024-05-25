@@ -34,37 +34,32 @@ iframe {
     margin: 20px;
 }
 
-.share-button {
-	background-color: #28a745;
-}
 
-.share-button:hover {
-	background-color: #218838;
-}
-
+/* Primary Button */
 .refresh-button {
-	background-color: #007bff;
+    background-color: #007bff;
 }
+
 .refresh-button:hover {
-	background-color: #0056b3;
+    background-color: #0056b3;
 }
 
-/* Styles for toggle-english button */
-.language-toggle {
-    background-color: #28a745; /* Green color */
+/* Secondary Button */
+.language-toggle, .toggle-sample-button, .share-button {
+    background-color: #28a745;
 }
 
-.language-toggle:hover {
-    background-color: #218838; /* Darker green on hover */
+.language-toggle:hover, .toggle-sample-button:hover, .share-button:hover{
+    background-color: #218838;
 }
 
-/* Styles for display-qr button */
-.toggle-share-button {
-    background-color: #6c757d; /* Gray color */
+/* Tertiary Button */
+.toggle-share-button  {
+    background-color: #6c757d;
 }
 
 .toggle-share-button:hover {
-    background-color: #5a6268; /* Darker gray on hover */
+    background-color: #5a6268;
 }
 
 .tutorial {
@@ -115,9 +110,10 @@ iframe {
 .iframe-container {
     position: relative;
     width: 100%;
+    /* padding-bottom: 56.25%; 16:9 aspect ratio */
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .iframe-container iframe {
@@ -179,3 +175,12 @@ footer a:hover {
     float: right;
     margin-left: 10px;
 }
+
+.sample-board img {
+    max-width: 100%; /* Ensures the image scales down if the container is smaller */
+    height: auto;   /* Maintains the aspect ratio */
+    width: 80%;     /* Adjust this value to the desired width */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensures the centering works */
+}
+
