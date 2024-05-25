@@ -112,7 +112,7 @@ iframe {
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
-    overflow: visible;
+    overflow: scroll;
 }
 
 .iframe-container iframe {
