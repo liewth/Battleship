@@ -6,6 +6,8 @@ Battleship is a classic strategy game that is typically played by two players. T
 
 Are you planing to lead a game where you don't have access to ppt (eg: in a bus, or place which don't have projector/TV). This is a battle ship game which you would not require projector or a TV to display your game, but internet access would require.
 
+This website use plain html and css.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
